@@ -10,11 +10,13 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
+// This function retrieves users and returns them as a JSON response using the Gin framework in Go.
 func GetUsers(c *gin.Context) {
 	users := handler.GetUsers()
 	c.JSON(http.StatusOK, users)
 }
 
+// This function retrieves a user by their ID and returns their information in JSON format.
 func GetUser(c *gin.Context) {
 	userId := c.Param("id")
 
@@ -26,6 +28,8 @@ func GetUser(c *gin.Context) {
 	c.JSON(http.StatusOK, user)
 }
 
+// This function creates a user by binding JSON data from a request, creating a user using a handler
+// function, and returning the created user as a JSON response.
 func CreateUser(c *gin.Context) {
 	var user models.User
 
@@ -37,6 +41,7 @@ func CreateUser(c *gin.Context) {
 	c.JSON(http.StatusOK, user)
 }
 
+// This function updates a user's information in a database using their ID.
 func UpdateUser(c *gin.Context) {
 	userId := c.Param("id")
 
@@ -53,6 +58,8 @@ func UpdateUser(c *gin.Context) {
 	c.JSON(http.StatusOK, user)
 }
 
+// The function deletes a user with the specified ID and returns a JSON response with a status code of
+// 200.
 func DeleteUser(c *gin.Context) {
 	userId := c.Param("id")
 

@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// The function initializes routes for CRUD operations on user data using the Gin framework in Go.
 func InitializeRoutes(r *gin.Engine) {
 	r.GET("/users", controller.GetUsers)
 	r.GET("/users/:id", controller.GetUser)
