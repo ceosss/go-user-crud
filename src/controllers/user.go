@@ -3,7 +3,7 @@ package controller
 import (
 	"net/http"
 
-	"github.com/ceosss/go-user-crud/handler"
+	"github.com/ceosss/go-user-crud/src/handler"
 	helper "github.com/ceosss/go-user-crud/src/helpers"
 	"github.com/ceosss/go-user-crud/src/models"
 	"github.com/gin-gonic/gin"
